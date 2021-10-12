@@ -11,9 +11,9 @@ ParkinLot <br>
 	- closeHour <br>
 
 ParkedCar
-	- code
-	- plate
-	- date
+	- code <br>
+	- plate <br>
+	- date <br>
 
 *Use Cases*
 
