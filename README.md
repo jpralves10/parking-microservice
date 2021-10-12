@@ -44,7 +44,13 @@ ParkedCar <br>
 *Executa o Test*
 **`npm run test`**
 
-*Install Jest*
+*Executa o Express*
+**`npm run express`**
+
+*Executa o Hapi*
+**`npm run hapi`**
+
+*Biblioteca Jest para testes unitários*
 **`npm install jest @types/jest --save`**
 
 *Biblioteca para interação com postgress*
