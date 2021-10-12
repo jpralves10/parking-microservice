@@ -10,7 +10,7 @@ ParkinLot <br>
 	- openHour <br>
 	- closeHour <br>
 
-ParkedCar
+ParkedCar <br>
 	- code <br>
 	- plate <br>
 	- date <br>
