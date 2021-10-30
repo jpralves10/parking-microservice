@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
   teste-postgres-compose:
     image: postgres
     environment:
@@ -8,7 +9,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - /PostgreSQL:/var/lib/postgresql/data 
+      - /PostgreSQL:/var/lib/postgresql/data
     networks:
       - postgres-compose-network
       
@@ -18,9 +19,19 @@ services:
       PGADMIN_DEFAULT_EMAIL: "jpralves10@gmail.com"
       PGADMIN_DEFAULT_PASSWORD: "admin"
     ports:
-      - "8080:80"
+      - "8081:80"
     depends_on:
       - teste-postgres-compose
+    networks:
+      - postgres-compose-network
+  
+  teste-parking-compose:
+    image: jpralves/parking-microservice:latest
+    environment:
+      NODE_ENV: "funny"
+      POSTGRES_HOST: "localhost"
+    ports:
+      - "8080:8080"
     networks:
       - postgres-compose-network
 

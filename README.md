@@ -15,11 +15,6 @@ ParkedCar <br>
 	- plate <br>
 	- date <br>
 
-*Use Cases*
-
-- EnterParkingLot
-- GetParkingLot
-
 
 ## Comandos utilizados
 
@@ -46,6 +41,9 @@ ParkedCar <br>
 
 *Executa o Express*
 **`npm run express`**
+
+*Executar express passando environment*
+**`NODE_ENV=4000 npm run express`**
 
 *Executa o Hapi*
 **`npm run hapi`**

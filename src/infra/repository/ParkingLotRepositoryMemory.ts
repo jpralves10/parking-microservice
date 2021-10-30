@@ -4,25 +4,20 @@ import ParkingLotRepository from "../../core/repository/ParkingLotRepository";
 
 export default class ParkingLotRepositoryMemory implements ParkingLotRepository {
 
-    parkingLots = [
-        {
+    parkingLots = [];
+    
+    getParkingLot(code: string): Promise<ParkingLot> {
+        this.parkingLots.push({
             code: "shopping", 
             capacity: 5, 
             openHour: 8, 
             closeHour: 22, 
             occupiedSpaces: 0
-        }
-    ];
-    parkedCars = [];
-    
-    getParkingLot(code: string): Promise<ParkingLot> {
-        const parkingLotData = this.parkingLots.find(parkingLot => parkingLot.code === code);
-        const occupiedSpaces = this.parkedCars.length;
-        const parkingLot = ParkingLotAdapter.create(parkingLotData.code, parkingLotData.capacity, parkingLotData.openHour, parkingLotData.closeHour, occupiedSpaces);
-        return Promise.resolve(parkingLot);
+        })
+        return Promise.resolve(this.parkingLots.pop())
     }
 
-    saveParkedCar(code: string, plate: string, date: Date): void {
-        this.parkedCars.push(code, plate, date);
+    saveParkingLot(code: string, capacity: number, openHour: number, closeHour: number): void {
+        this.parkingLots.push(code, capacity, openHour, closeHour);
     }
 }
